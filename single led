@@ -1,0 +1,21 @@
+#define LED1 10 
+ 
+void setup() { 
+ 
+  Serial.begin(9600); 
+  pinMode(LED1, OUTPUT); 
+ 
+} 
+ 
+void loop() { 
+  digitalWrite(LED1, HIGH); 
+  Serial.println("LED1 ON"); 
+ 
+  delay(1000); 
+   
+  digitalWrite(LED1, LOW); 
+  Serial.println("LED1 OFF"); 
+ 
+  delay(1000); 
+ 
+} 
