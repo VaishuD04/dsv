@@ -1,0 +1,28 @@
+#define IR 9 
+#define Buzzer 2 
+ 
+void setup() { 
+ 
+Serial.begin(9600); 
+pinMode(IR, INPUT); 
+pinMode(Buzzer, OUTPUT); 
+Serial.println("IR Sensor Interfacing"); 
+} 
+ 
+void loop() { 
+ int a = digitalRead(IR); 
+ if(a == 0) 
+ { 
+  Serial.println("Motion detected"); 
+  Serial.println("Buzzer ON"); 
+  digitalWrite(Buzzer, LOW); 
+  delay(1000); 
+  } 
+  else
+  { 
+  Serial.println("Motion not detected"); 
+  Serial.println("Buzzer OFF"); 
+  digitalWrite(Buzzer, HIGH); 
+  delay(1000); 
+  } 
+}
