@@ -7,11 +7,11 @@ void setup() {
  
 Serial.begin(9600); 
 lcd.begin(16, 2); 
-lcd.print(“Priyanka”); 
+lcd.print(“Vaishnavi”); 
 lcd.setCursor(0, 1); 
-lcd.print(“44549”); 
-Serial.println(“Priyanka”); 
-Serial.println(“44549”); 
+lcd.print(“B1903105011”); 
+Serial.println(“Vaishnavi”); 
+Serial.println(“B1903105011”); 
 } 
  
 void loop() { 
