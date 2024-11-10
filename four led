@@ -1,0 +1,37 @@
+#define LED1 10 
+#define LED2 11 
+#define LED3 12 
+#define LED4 13 
+ 
+void setup() { 
+  Serial.begin(9600); 
+  pinMode(LED1, OUTPUT); 
+  pinMode(LED2, OUTPUT); 
+  pinMode(LED3, OUTPUT); 
+  pinMode(LED4, OUTPUT); 
+} 
+ 
+void loop() { 
+   
+  digitalWrite(LED1, HIGH); 
+  Serial.println("LED1 ON"); 
+  digitalWrite(LED2, HIGH); 
+  Serial.println("LED2 ON"); 
+  digitalWrite(LED3, HIGH); 
+  Serial.println("LED3 ON"); 
+  digitalWrite(LED4, HIGH); 
+  Serial.println("LED4 ON"); 
+  delay(1000); 
+   
+  digitalWrite(LED1, LOW); 
+  Serial.println("LED1 OFF"); 
+  digitalWrite(LED2, LOW); 
+  Serial.println("LED2 OFF"); 
+
+ 
+  digitalWrite(LED3, LOW); 
+  Serial.println("LED3 OFF"); 
+  digitalWrite(LED4, LOW); 
+  Serial.println("LED4 OFF"); 
+  delay(1000); 
+}
