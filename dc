@@ -1,0 +1,38 @@
+#define DC1 11 
+#define DC2 13  
+ 
+void setup() { 
+pinMode(DC1,OUTPUT); 
+pinMode(DC2,OUTPUT); 
+Serial.begin(9600); 
+} 
+ 
+void loop() { 
+int i; 
+digitalWrite(DC1,HIGH); 
+digitalWrite(DC2,LOW); 
+Serial.println("DC Motor is rotating in clockwise direction."); 
+for(i=9;i<255;i+=20) 
+{ 
+  analogWrite(DC1,i); 
+  delay(1000); 
+  } 
+ 
+digitalWrite(DC1,LOW); 
+ 
+digitalWrite(DC2,LOW); 
+delay(2000); 
+Serial.println("DC Motor stopped."); 
+digitalWrite(DC1,LOW); 
+digitalWrite(DC2,HIGH); 
+Serial.println("DC Motor is rotating in anti-clockwise direction."); 
+for(i=9;i<255;i+=20) 
+{ 
+  analogWrite(DC1,i); 
+  delay(1000); 
+  } 
+digitalWrite(DC1,LOW); 
+digitalWrite(DC2,LOW); 
+delay(2000); 
+Serial.println("DC Motor stopped."); 
+}
