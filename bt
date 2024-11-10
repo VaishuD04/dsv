@@ -1,0 +1,43 @@
+# include <SoftwareSerial.h> 
+ 
+#define LED1 2 
+#define LED2 3 
+#define LED3 4 
+#define LED4 5 
+SoftwareSerial bt(8,9); 
+ 
+void setup() { 
+  bt.begin(9600); 
+  Serial.begin(9600); 
+  Serial.println("Bluetooth Interfacing"); 
+  pinMode(LED1, OUTPUT); 
+  pinMode(LED2, OUTPUT); 
+  pinMode(LED3, OUTPUT); 
+  pinMode(LED4, OUTPUT); 
+} 
+ 
+void loop() { 
+  char input; 
+  if(bt.available()){ 
+    input = bt.read(); 
+    Serial.println(input); 
+  } 
+ 
+  if(input == '1'){ 
+    digitalWrite(LED1, LOW); 
+    digitalWrite(LED2, LOW); 
+    digitalWrite(LED3, LOW); 
+    digitalWrite(LED4, LOW); 
+    bt.print("All LED are ON"); 
+    Serial.println("All LED are ON"); 
+  } 
+ 
+  if(input == '0'){ 
+    digitalWrite(LED1, HIGH); 
+    digitalWrite(LED2, HIGH); 
+    digitalWrite(LED3, HIGH); 
+    digitalWrite(LED4, HIGH); 
+    bt.print("All LED are OFF"); 
+    Serial.println("All LED are OFF"); 
+  } 
+}
